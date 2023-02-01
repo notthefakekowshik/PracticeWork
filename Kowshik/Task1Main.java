@@ -17,12 +17,13 @@ public class Task1Main
 
          Map<String,List<Task1Employee>> filteredEmployeesData;
 
-         List<Task1Employee> currList = listOfEmployees.stream().filter(x -> x.getAge() >= 25 && x.getAge() <= 40).collect(Collectors.toList());
+         List<Task1Employee> currList = listOfEmployees.stream().filter(x -> x.getAge() >= 25 && x.getAge() <= 40).sorted((obj1,obj2) -> obj1.getName().compareTo(obj2.getName())).collect(Collectors.toList());
 
         filteredEmployeesData = currList.stream().collect(Collectors.groupingBy(Task1Employee :: getLocation));
-        System.out.println(filteredEmployeesData.size());
-        System.out.println();
-        System.out.println(filteredEmployeesData);
+
+//        System.out.println(filteredEmployeesData.size());
+//        System.out.println();
+//        System.out.println(filteredEmployeesData);
 
          for(String name : filteredEmployeesData.keySet()) {
              System.out.print(name+"->");
