@@ -18,7 +18,7 @@ public class UserService
     public Map<String,List<Employee>> getFilteredEmployees() 
     {
         
-        //filteredEmployeesData = listOfEmployees.stream().filter(x -> x.getAge() >= 25 && x.getAge() <= 40).sorted((obj1,obj2) -> obj1.getName().compareTo(obj2.getName())).collect(Collectors.toList()).stream().collect(Collectors.groupingBy(curr->curr.getLocation().toLowerCase()));
+        filteredEmployeesData = listOfEmployees.stream().filter(x -> x.getAge() >= 25 && x.getAge() <= 40).sorted((obj1,obj2) -> obj1.getName().compareTo(obj2.getName())).collect(Collectors.toList()).stream().collect(Collectors.groupingBy(curr->curr.getLocation().toLowerCase()));
         return filteredEmployeesData;
     }
     
